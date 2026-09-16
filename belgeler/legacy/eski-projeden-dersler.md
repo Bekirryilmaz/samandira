@@ -6,7 +6,7 @@ Bu belge canonical değildir. Legacy `gezi_bot` deneyiminden çıkarılmış uya
 
 Yeni sistemin parçasını tarif etmez. Legacy kod, şema, skor, ekran veya migration yeni ürünün temeli sayılmaz. Çelişkide [../urun/urun-sozlesmesi.md](../urun/urun-sozlesmesi.md) ve alt canonical belgeler kazanır.
 
-Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
+Her ders üç parçadır: **GOZLEM**, **SONUC**, **CLEAN BUILD DERSI**.
 
 ## 2. Fazla Veri vs Kaliteli Veri
 
@@ -14,7 +14,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** 1719 yer, kaliteli karar demek değildi. Hacim, “şehir hazır” iddiasını taşıyamaz.
 
-**YENI KURAL:** Olgunluk kayıt sayısıyla ölçülmez. Bir yer, ilgili iddia yayımlanabilir olmadan hazır aday sayılmaz.
+**CLEAN BUILD DERSI:** Olgunluk kayıt sayısıyla ölçülmez. Bir yer, ilgili iddia yayımlanabilir olmadan hazır aday sayılmaz.
 
 ## 3. Veri Kaynagi Secimi
 
@@ -22,7 +22,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Kaynak çeşitliliği, kullanılabilir bilgi değildir. Yanlış kaynaktaki hacim darboğazı büyütür.
 
-**YENI KURAL:** Kaynak önce hak, kimlik ve doğrulanabilirlikle seçilir. Scraper çoğaltmak ASAMA gerekçesi olamaz.
+**CLEAN BUILD DERSI:** Kaynak önce hak, kimlik ve doğrulanabilirlikle seçilir. Scraper çoğaltmak ASAMA gerekçesi olamaz.
 
 ## 4. Scraper Stratejisi
 
@@ -30,7 +30,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Erken scraper, erken ürün değildir. Hak unknown iken toplanan metin yük olur.
 
-**YENI KURAL:** Yeni toplama, kaynak politikası ve publication kapısı olmadan açılmaz. Hacim hedefi kalite hedefinin önüne geçmez.
+**CLEAN BUILD DERSI:** Yeni toplama, kaynak politikası ve publication kapısı olmadan açılmaz. Hacim hedefi kalite hedefinin önüne geçmez.
 
 ## 5. Google Yorumlari ve NLP
 
@@ -38,7 +38,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Yorum adedi fact coverage demek değildi. Metin içerde olsa bile public hak doğmaz.
 
-**YENI KURAL:** Google yorumları yalnız internal offline NLP girdisi olabilir. Raw review, reviewer identity ve public review score yok. Request-time ağır NLP yok.
+**CLEAN BUILD DERSI:** Google yorumları yalnız internal offline NLP girdisi olabilir. Raw review, reviewer identity ve public review score yok. Request-time ağır NLP yok.
 
 ## 6. Generic Sentiment
 
@@ -46,7 +46,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Generic sentiment suitability değildir. Genel beğeni, sohbet veya erişim ihtiyacını çözmez.
 
-**YENI KURAL:** `generic_sentiment` ayrı türdür. Tercih, sıralama, hard constraint veya public skor girdisi olamaz.
+**CLEAN BUILD DERSI:** `generic_sentiment` ayrı türdür. Tercih, sıralama, hard constraint veya public skor girdisi olamaz.
 
 ## 7. Fact ve Experience Signal Ayrimi
 
@@ -54,7 +54,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** “Park sorunu vardı” fact değildir. Deneyimi olgu sanmak false precision üretir.
 
-**YENI KURAL:** `fact`, `experience_signal` ve `generic_sentiment` ayrı durur. Experience signal hard PASS/FAIL üretmez.
+**CLEAN BUILD DERSI:** `fact`, `experience_signal` ve `generic_sentiment` ayrı durur. Experience signal hard PASS/FAIL üretmez.
 
 ## 8. Yer ve Sube Kimligi
 
@@ -62,7 +62,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Koordinat veya benzer isim, aynı yer demek değildir. Hatalı birleşim downstream'i zehirler.
 
-**YENI KURAL:** Şube belirsizse deneyim ve iddia birleştirilmez. Kör fuzzy merge yasaktır. Kimlik insan doğrulaması olmadan kalıcı birleşmez.
+**CLEAN BUILD DERSI:** Şube belirsizse deneyim ve iddia birleştirilmez. Kör fuzzy merge yasaktır. Kimlik insan doğrulaması olmadan kalıcı birleşmez.
 
 ## 9. Unknown ve Eksik Veri
 
@@ -70,7 +70,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Parser başarısı veri yeterliği değildir. Unknown'u gizleyen sistem sahte kesinlik üretir.
 
-**YENI KURAL:** Unknown birinci sınıf durumdur. `unknown != false`. Kritik unknown positive match değildir. Soft preference unknown “destekleniyor” demez.
+**CLEAN BUILD DERSI:** Unknown birinci sınıf durumdur. `unknown != false`. Kritik unknown positive match değildir. Soft preference unknown “destekleniyor” demez.
 
 ## 10. Publication ve Public Veri Siniri
 
@@ -78,7 +78,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Dahilde olmak public hak değildir. Sızıntı sonradan filter ile tam onarılamaz.
 
-**YENI KURAL:** Publication ayrı kapıdır. Public yüzey allow-list'tir. Otomatik yayın yoktur.
+**CLEAN BUILD DERSI:** Publication ayrı kapıdır. Public yüzey allow-list'tir. Otomatik yayın yoktur.
 
 ## 11. Frontend Business Logic
 
@@ -86,7 +86,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Frontend'de hesaplanan uygunluk ikinci motor demektir. Kanallar ayrışır.
 
-**YENI KURAL:** Frontend uygunluk hesaplamaz. Sıra, kapı ve gerekçe yalnız Karar Motorundan gelir.
+**CLEAN BUILD DERSI:** Frontend uygunluk hesaplamaz. Sıra, kapı ve gerekçe yalnız Karar Motorundan gelir.
 
 ## 12. Search / Kesfet / Karar Motoru Ayrimi
 
@@ -94,7 +94,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Karışık skor, “neden bu yer?” sorusunu cevaplamaz.
 
-**YENI KURAL:** Search aday bulur. Keşfet Search + Karar Motoru akışıdır. Tek suitability authority Karar Motorudur.
+**CLEAN BUILD DERSI:** Search aday bulur. Keşfet Search + Karar Motoru akışıdır. Tek suitability authority Karar Motorudur.
 
 ## 13. Rota Planlama
 
@@ -102,7 +102,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Planning estimate fact değildir. Rota motoru uygunluk otoritesi olamaz.
 
-**YENI KURAL:** Route Engine yalnız zaman/hareket planlar. Suitability'yi yeniden hesaplamaz. Estimate fact gibi sunulmaz.
+**CLEAN BUILD DERSI:** Route Engine yalnız zaman/hareket planlar. Suitability'yi yeniden hesaplamaz. Estimate fact gibi sunulmaz.
 
 ## 14. Gunluk Rota ve Cok Gunluk Gezi Ayrimi
 
@@ -110,7 +110,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Gün sayısını artırmak Akıllı Gezi üretmez. Küçük karar gereksiz büyür.
 
-**YENI KURAL:** Günlük Akıllı Rota != Akıllı Gezi. Çok günlük gezi ayrı kapsam kararıdır; MVP dışıdır.
+**CLEAN BUILD DERSI:** Günlük Akıllı Rota != Akıllı Gezi. Çok günlük gezi ayrı kapsam kararıdır; MVP dışıdır.
 
 ## 15. Migration Borcu
 
@@ -118,7 +118,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** 0016 migration temiz baseline değildir. Eski şema üzerine “bir tur daha” güvenli başlangıç sayılmaz.
 
-**YENI KURAL:** Clean build kendi şemasını ihtiyaç doğunca kurar. Legacy migration zinciri taşınmaz.
+**CLEAN BUILD DERSI:** Clean build kendi şemasını ihtiyaç doğunca kurar. Legacy migration zinciri taşınmaz.
 
 ## 16. Dokuman Karmasasi
 
@@ -126,7 +126,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Belge fazlalığı authority confusion yarattı. Uzun öz eleştiri, kısa kuralın yerini tutmadı.
 
-**YENI KURAL:** Canonical belge az ve sahipli olur. README ve AGENTS ikinci ürün kaynağı olmaz. Karar kaydı olmadan kural değişmez.
+**CLEAN BUILD DERSI:** Canonical belge az ve sahipli olur. README ve AGENTS ikinci ürün kaynağı olmaz. Karar kaydı olmadan kural değişmez.
 
 ## 17. Mega Prompt ve Agent Kullanimi
 
@@ -134,7 +134,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Momentum, netlik değildir. Mega görev borcu gizler.
 
-**YENI KURAL:** Çalışma sırası bozulmaz: ihtiyaç → davranış → veri → kaynak → domain → backend → test → frontend. Ürün kilitlenmeden framework ve Hero üretilmez.
+**CLEAN BUILD DERSI:** Çalışma sırası bozulmaz: ihtiyaç → davranış → veri → kaynak → domain → backend → test → frontend. Ürün kilitlenmeden framework ve Hero üretilmez.
 
 ## 18. UI ve Hero'nun Erken Yapilmasi
 
@@ -142,7 +142,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Final UI, eksik kararı gizler. Erken güzellik, yanlış kapsamı meşrulaştırır.
 
-**YENI KURAL:** Premium Hero ve final tasarım MVP dışıdır. UI, yetkili sonucu göstermek için gelir; ürünü tanımlamak için değil.
+**CLEAN BUILD DERSI:** Premium Hero ve final tasarım MVP dışıdır. UI, yetkili sonucu göstermek için gelir; ürünü tanımlamak için değil.
 
 ## 19. Test ve Invariantlar
 
@@ -150,7 +150,7 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** “Test geçti” ürün invariantı demek değildir. Yanlış şeyi test etmek güven üretir.
 
-**YENI KURAL:** Invariant testleri zorunludur: hard constraint telafi edilmez; unknown positive match değildir; sponsor organic kararı değiştirmez; yasak public alan çıkmaz; zayıf adayla kota dolmaz.
+**CLEAN BUILD DERSI:** Invariant testleri zorunludur: hard constraint telafi edilmez; unknown positive match değildir; sponsor organic kararı değiştirmez; yasak public alan çıkmaz; zayıf adayla kota dolmaz.
 
 ## 20. Yeni Projeye Tasinmayacak Implementasyonlar
 
@@ -158,4 +158,4 @@ Her ders üç parçadır: **GOZLEM**, **SONUC**, **YENI KURAL**.
 
 **SONUC:** Çalışan prototip, kabul edilmiş ürünün implementasyonu değildir. Kopyalanan kod, kopyalanan yanlıştır.
 
-**YENI KURAL:** Legacy implementasyon kopyalanmaz. Yalnız bu belgedeki dersler ve canonical ürün sözleşmeleri yeni sistemi bağlar. Kod gerektiğinde sıfırdan, sözleşmeye göre yazılır.
+**CLEAN BUILD DERSI:** Legacy implementasyon kopyalanmaz. Yeni sistemi yalnız canonical ürün sözleşmeleri bağlar. Bu belge tarihsel ders ve uyarı kaynağıdır. Kod gerektiğinde canonical sözleşmelere göre sıfırdan yazılır.
